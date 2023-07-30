@@ -1,2 +1,2 @@
-# odin-calculator
-Calculator Project from The Odin Project Course
+# Odin Calculator
+**Calculator Project from The Odin Project Course**

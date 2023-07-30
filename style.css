@@ -1,0 +1,11 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.main-title{
+    text-align: center;
+    padding: 10px;
+    font-size: 48px;
+    font-weight: 800;
+}
