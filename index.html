@@ -9,9 +9,7 @@
 <body>
     <h1 class="main-title">Basic Calculator</h1>
     <div id="calculator-frame">
-        <div id="display-container">
-            0
-        </div>
+        <div id="display_container">0</div>
         <div id="functions-container">
             <div class="grid">
                 <button class="calc-button operation">+</button>
@@ -20,25 +18,25 @@
                 <button class="calc-button operation">/</button>
             </div>
             <div class="grid">
-                <button class="calc-button numbers">7</button>
-                <button class="calc-button numbers">8</button>
-                <button class="calc-button numbers">9</button>
-                <button class="calc-button additional">AC</button>
+                <button onclick="populateDisplay(7)" class="calc-button numbers">7</button>
+                <button onclick="populateDisplay(8)" class="calc-button numbers">8</button>
+                <button onclick="populateDisplay(9)" class="calc-button numbers">9</button>
+                <button onclick="clearDisplay()" class="calc-button additional">AC</button>
             </div>
             <div class="grid">
-                <button class="calc-button numbers">4</button>
-                <button class="calc-button numbers">5</button>
-                <button class="calc-button numbers">6</button>
+                <button onclick="populateDisplay(4)" class="calc-button numbers">4</button>
+                <button onclick="populateDisplay(5)" class="calc-button numbers">5</button>
+                <button onclick="populateDisplay(6)" class="calc-button numbers">6</button>
                 <button class="calc-button additional">+/-</button>
             </div>
             <div class="grid">
-                <button class="calc-button numbers">1</button>
-                <button class="calc-button numbers">2</button>
-                <button class="calc-button numbers">3</button>
+                <button onclick="populateDisplay(1)" class="calc-button numbers">1</button>
+                <button onclick="populateDisplay(2)" class="calc-button numbers">2</button>
+                <button onclick="populateDisplay(3)" class="calc-button numbers">3</button>
                 <button class="calc-button additional">%</button>
             </div>
             <div class="grid">
-                <button class="calc-button zero">0</button>
+                <button onclick="populateDisplay(0)" class="calc-button zero">0</button>
                 <button class="calc-button numbers">.</button>
                 <button class="calc-button additional">=</button>
             </div>
