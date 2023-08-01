@@ -37,22 +37,21 @@ body{
 #functions-container{
     width: 95%;
     height: 430px;
-    border: 5px solid black;
     margin: 15px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
 }
 .grid{
     flex: 1;
     display: flex;
-    gap: 5px;
 }
 .calc-button{
     flex: 1;
     font-size: 42px;
     font-weight: 700;
     border: none;
+    margin: 3px;
+    border-radius: 5px;
 }
 .operation{
     background-color: #ff3333;
@@ -66,4 +65,8 @@ body{
 .zero{
     flex: 2;
     background-color: #ffffff;
+}
+.calc-button:hover{
+    background-color: #b3b3b3;
+    color: white;
 }

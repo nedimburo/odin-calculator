@@ -53,6 +53,7 @@ function populateDisplay(number){
         display.textContent+=number;
         valueDisplay=display.textContent;
     }
+    console.log(valueDisplay.length);
 }
 
 function chooseOperator(operator){
