@@ -18,6 +18,11 @@ function addToDisplay(number){
         display.textContent=number;
         displayValue=number;
     }
+    else if(firstNumber!="" && displayValue=="0."){
+        display.textContent+=number;
+        displayValue=display.textContent;
+        secondNumber=1;
+    }
     else if (firstNumber!="" && secondNumber==0){
         display.textContent="";
         display.textContent=number;
@@ -109,6 +114,9 @@ function addDot(){
 
 function changeSign(){
     let displayValue=display.textContent;
+    if (displayValue=="0"){
+        return;
+    }
     if (displayValue[0]=="-"){
         display.textContent=displayValue.substring(1);
     }
