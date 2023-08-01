@@ -106,3 +106,18 @@ function addDot(){
         display.textContent+=".";
     }
 }
+
+function changeSign(){
+    let displayValue=display.textContent;
+    if (displayValue[0]=="-"){
+        display.textContent=displayValue.substring(1);
+    }
+    else{
+        display.textContent="-"+displayValue;
+    }
+}
+
+function getPercentage(){
+    let displayValue=display.textContent;
+    display.textContent=Number(displayValue)/100;
+}
