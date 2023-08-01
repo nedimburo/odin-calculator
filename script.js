@@ -1,95 +1,77 @@
 let firstNumber="";
-let secondNumber="";
+let secondNumber=0;
 let selectedOperator="";
 let secondSelectedOperator="";
 
 let display=document.getElementById("display_container");
 
-function add(firstNum, secondNum){
-    firstNumber=Number(firstNum)+Number(secondNum);
-    selectedOperator="";
-    secondNumber=0;
-    display.textContent=firstNumber;
-}
-function subtract(firstNum, secondNum){
-    firstNumber=Number(firstNum)-Number(secondNum);
-    selectedOperator="";
-    secondNumber=0;
-    display.textContent=firstNumber;
-}
-function multiply(firstNum, secondNum){
-    firstNumber=Number(firstNum)*Number(secondNum);
-    selectedOperator="";
-    secondNumber=0;
-    display.textContent=firstNumber;
-}
-function divide(firstNum, secondNum){
-    if (Number(secondNum)==0){
-        display.textContent="Error";
-        firstNumber="";
-        selectedOperator="";
-        secondNumber="";
-    }
-    else{
-        firstNumber=Number(firstNum)/Number(secondNum);
-        firstNumber=firstNumber.toFixed(2);
-        selectedOperator="";
-        secondNumber=0;
-        display.textContent=firstNumber;
-    }
-}
-
-function populateDisplay(number){
-    let valueDisplay=display.textContent;
-    if (valueDisplay=="0" || valueDisplay=="Error"){
-        display.textContent=number;
-        valueDisplay=display.textContent;
-    }
-    else if(firstNumber!=""){
-        display.textContent="";
-        display.textContent=number;
-    }
-    else if (valueDisplay.length<9){
-        display.textContent+=number;
-        valueDisplay=display.textContent;
-    }
-    console.log(valueDisplay.length);
-}
-
-function chooseOperator(operator){
-    if (selectedOperator!=""){
-        secondSelectedOperator=operator;
-        calculate();
-        selectedOperator=secondSelectedOperator;
-        secondSelectedOperator="";
-    }
-    else{
-        selectedOperator=operator;
-        firstNumber=display.textContent;
-    }
-}
-
-function calculate(){
-    if (firstNumber!=display.textContent){
-        secondNumber=display.textContent;
-    }
-    if (selectedOperator=="+"){
-        add(firstNumber, secondNumber);
-    }
-    if (selectedOperator=="-"){
-        subtract(firstNumber, secondNumber);
-    }
-    if (selectedOperator=="*"){
-        multiply(firstNumber, secondNumber);
-    }
-    if (selectedOperator=="/"){
-        divide(firstNumber, secondNumber);
-    }
-}
-
 function clearAll(){
     firstNumber="";
     selectedOperator="";
-    secondNumber="";
+    secondNumber=0;
     display.textContent="0";
+}
+
+function addToDisplay(number){
+    let displayValue=display.textContent;
+    if (displayValue=="0"){
+        display.textContent=number;
+        displayValue=number;
+    }
+    else if (firstNumber!="" && secondNumber==0){
+        display.textContent="";
+        display.textContent=number;
+        secondNumber=number;
+    }
+    else if(displayValue.length>=9){
+        return;
+    }
+    else{
+        display.textContent+=number;
+        displayValue=display.textContent;
+    }
+}
+
+function chooseOperator(operator){
+    selectedOperator=operator;
+    firstNumber=display.textContent;
+}
+
+function operate(){
+    if (firstNumber!=""){
+        secondNumber=display.textContent;
+    }
+    if (selectedOperator=="+"){
+        add();
+    }
+    if (selectedOperator=="-"){
+        subtract();
+    }
+    if (selectedOperator=="*"){
+        multiply();
+    }
+    if (selectedOperator=="/"){
+        divide();
+    }
+    secondNumber=0;
+}
+
+function add(){
+    firstNumber=Number(firstNumber)+Number(secondNumber);
+    display.textContent=firstNumber;
+}
+
+function subtract(){
+    firstNumber=Number(firstNumber)-Number(secondNumber);
+    display.textContent=firstNumber;
+}
+
+function multiply(){
+    firstNumber=Number(firstNumber)*Number(secondNumber);
+    display.textContent=firstNumber;
+}
+
+function divide(){
+    firstNumber=Number(firstNumber)/Number(secondNumber);
+    display.textContent=firstNumber;
 }
