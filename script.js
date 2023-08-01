@@ -14,7 +14,7 @@ function clearAll(){
 
 function addToDisplay(number){
     let displayValue=display.textContent;
-    if (displayValue=="0"){
+    if (displayValue=="0" || displayValue=="error:)"){
         display.textContent=number;
         displayValue=number;
     }
@@ -33,8 +33,16 @@ function addToDisplay(number){
 }
 
 function chooseOperator(operator){
-    selectedOperator=operator;
-    firstNumber=display.textContent;
+    if (selectedOperator!=""){
+        secondSelectedOperator=operator;
+        operate();
+        selectedOperator=secondSelectedOperator;
+        secondSelectedOperator="";
+    }
+    else{
+        selectedOperator=operator;
+        firstNumber=display.textContent;
+    } 
 }
 
 function operate(){
@@ -54,6 +62,7 @@ function operate(){
         divide();
     }
     secondNumber=0;
+    selectedOperator="";
 }
 
 function add(){
@@ -72,6 +81,28 @@ function multiply(){
 }
 
 function divide(){
-    firstNumber=Number(firstNumber)/Number(secondNumber);
-    display.textContent=firstNumber;
+    if (Number(secondNumber)==0){
+        display.textContent="error:)";
+        firstNumber="";
+        selectedOperator="";
+        secondNumber=0;
+    }
+    else{
+        firstNumber=Number(firstNumber)/Number(secondNumber);
+        display.textContent=firstNumber;
+    } 
+}
+
+function addDot(){
+    let dotStatus=false;
+    let displayValue=display.textContent;
+    for (let i=0; i<displayValue.length; i++){
+        if (displayValue[i]=="."){
+            dotStatus=true;
+            break;
+        }
+    }
+    if (dotStatus==false){
+        display.textContent+=".";
+    }
 }
