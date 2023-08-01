@@ -41,10 +41,12 @@ body{
     margin: 15px;
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 .grid{
     flex: 1;
     display: flex;
+    gap: 5px;
 }
 .calc-button{
     flex: 1;

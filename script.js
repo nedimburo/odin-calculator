@@ -17,13 +17,22 @@ function multiply(firstNum, secondNum){
     display.textContent=firstNumber;
 }
 function divide(firstNum, secondNum){
-    firstNumber=Number(firstNum)/Number(secondNum);
-    display.textContent=firstNumber;
+    if (Number(secondNum)==0){
+        display.textContent="Error";
+        firstNumber="";
+        selectedOperator="";
+        secondNumber="";
+    }
+    else{
+        firstNumber=Number(firstNum)/Number(secondNum);
+        firstNumber=firstNumber.toFixed(2);
+        display.textContent=firstNumber;
+    }
 }
 
 function populateDisplay(number){
     let valueDisplay=display.textContent;
-    if (valueDisplay=="0"){
+    if (valueDisplay=="0" || valueDisplay=="Error"){
         display.textContent=number;
         valueDisplay=display.textContent;
     }
@@ -43,7 +52,9 @@ function chooseOperator(operator){
 }
 
 function calculate(){
-    secondNumber=display.textContent;
+    if (secondNumber==""){
+        secondNumber=display.textContent;
+    }
     if (selectedOperator=="+"){
         add(firstNumber, secondNumber);
     }
