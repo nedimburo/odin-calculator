@@ -1,19 +1,26 @@
 let firstNumber="";
 let secondNumber="";
 let selectedOperator="";
+let secondSelectedOperator="";
 
 let display=document.getElementById("display_container");
 
 function add(firstNum, secondNum){
     firstNumber=Number(firstNum)+Number(secondNum);
+    selectedOperator="";
+    secondNumber=0;
     display.textContent=firstNumber;
 }
 function subtract(firstNum, secondNum){
     firstNumber=Number(firstNum)-Number(secondNum);
+    selectedOperator="";
+    secondNumber=0;
     display.textContent=firstNumber;
 }
 function multiply(firstNum, secondNum){
     firstNumber=Number(firstNum)*Number(secondNum);
+    selectedOperator="";
+    secondNumber=0;
     display.textContent=firstNumber;
 }
 function divide(firstNum, secondNum){
@@ -26,6 +33,8 @@ function divide(firstNum, secondNum){
     else{
         firstNumber=Number(firstNum)/Number(secondNum);
         firstNumber=firstNumber.toFixed(2);
+        selectedOperator="";
+        secondNumber=0;
         display.textContent=firstNumber;
     }
 }
@@ -47,12 +56,20 @@ function populateDisplay(number){
 }
 
 function chooseOperator(operator){
-    selectedOperator=operator;
-    firstNumber=display.textContent;
+    if (selectedOperator!=""){
+        secondSelectedOperator=operator;
+        calculate();
+        selectedOperator=secondSelectedOperator;
+        secondSelectedOperator="";
+    }
+    else{
+        selectedOperator=operator;
+        firstNumber=display.textContent;
+    }
 }
 
 function calculate(){
-    if (secondNumber==""){
+    if (firstNumber!=display.textContent){
         secondNumber=display.textContent;
     }
     if (selectedOperator=="+"){
