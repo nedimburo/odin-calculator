@@ -72,17 +72,32 @@ function operate(){
 
 function add(){
     firstNumber=Number(firstNumber)+Number(secondNumber);
-    display.textContent=firstNumber;
+    if (firstNumber.toString().length>13){
+        display.textContent=firstNumber.toString().substring(0, 13);
+    }
+    else{
+        display.textContent=firstNumber; 
+    }
 }
 
 function subtract(){
     firstNumber=Number(firstNumber)-Number(secondNumber);
-    display.textContent=firstNumber;
+    if (firstNumber.toString().length>13){
+        display.textContent=firstNumber.toString().substring(0, 13);
+    }
+    else{
+        display.textContent=firstNumber; 
+    }
 }
 
 function multiply(){
     firstNumber=Number(firstNumber)*Number(secondNumber);
-    display.textContent=firstNumber;
+    if (firstNumber.toString().length>13){
+        display.textContent=firstNumber.toString().substring(0, 13);
+    }
+    else{
+        display.textContent=firstNumber; 
+    }
 }
 
 function divide(){
@@ -94,7 +109,12 @@ function divide(){
     }
     else{
         firstNumber=Number(firstNumber)/Number(secondNumber);
-        display.textContent=firstNumber;
+        if (firstNumber.toString().length>13){
+            display.textContent=firstNumber.toString().substring(0, 13);
+        }
+        else{
+            display.textContent=firstNumber; 
+        }
     } 
 }
 
