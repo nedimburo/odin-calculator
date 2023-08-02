@@ -12,10 +12,10 @@
         <div id="display_container">0</div>
         <div id="functions-container">
             <div class="grid">
-                <button onclick="chooseOperator('+')" class="calc-button operation">+</button>
-                <button onclick="chooseOperator('-')" class="calc-button operation">-</button>
-                <button onclick="chooseOperator('*')" class="calc-button operation">*</button>
-                <button onclick="chooseOperator('/')" class="calc-button operation">/</button>
+                <button onclick="chooseOperator('+')" class="calc-button operation" data-key="107">+</button>
+                <button onclick="chooseOperator('-')" class="calc-button operation" data-key="109">-</button>
+                <button onclick="chooseOperator('*')" class="calc-button operation" data-key="106">*</button>
+                <button onclick="chooseOperator('/')" class="calc-button operation" data-key="111">/</button>
             </div>
             <div class="grid">
                 <button onclick="addToDisplay(7)" class="calc-button numbers" data-key="55">7</button>
@@ -38,7 +38,7 @@
             <div class="grid">
                 <button onclick="addToDisplay(0)" class="calc-button zero" data-key="48">0</button>
                 <button onclick="addDot()" class="calc-button numbers" data-key="190">.</button>
-                <button onclick="operate()" class="calc-button additional">=</button>
+                <button onclick="operate()" class="calc-button additional" data-key="13">=</button>
             </div>
         </div>
     </div>

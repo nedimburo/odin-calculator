@@ -151,7 +151,6 @@ function getPercentage(){
 }
 
 window.addEventListener("keydown", function(e){
-    console.log(e);
     const selection=document.querySelector(`button[data-key="${e.keyCode}"]`);
     if (!selection) return;
     checkKey(e.keyCode);
@@ -161,6 +160,9 @@ function checkKey(keyCode){
     switch (keyCode){
         case 8:
             clearAll();
+            break;
+        case 13:
+            operate();
             break;
         case 48:
             addToDisplay("0");
@@ -191,6 +193,18 @@ function checkKey(keyCode){
             break;
         case 57:
             addToDisplay("9");
+            break;
+        case 106:
+            chooseOperator("*");
+            break;
+        case 107:
+            chooseOperator("+");
+            break;
+        case 109:
+            chooseOperator("-");
+            break;
+        case 111:
+            chooseOperator("/");
             break;
         case 189:
             changeSign();
