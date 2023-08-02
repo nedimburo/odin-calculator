@@ -149,3 +149,56 @@ function getPercentage(){
     let displayValue=display.textContent;
     display.textContent=Number(displayValue)/100;
 }
+
+window.addEventListener("keydown", function(e){
+    console.log(e);
+    const selection=document.querySelector(`button[data-key="${e.keyCode}"]`);
+    if (!selection) return;
+    checkKey(e.keyCode);
+});
+
+function checkKey(keyCode){
+    switch (keyCode){
+        case 8:
+            clearAll();
+            break;
+        case 48:
+            addToDisplay("0");
+            break;
+        case 49:
+            addToDisplay("1");
+            break;
+        case 50:
+            addToDisplay("2");
+            break;
+        case 51:
+            addToDisplay("3");
+            break;
+        case 52:
+            addToDisplay("4");
+            break;
+        case 53:
+            addToDisplay("5");
+            break;
+        case 54:
+            addToDisplay("6");
+            break;
+        case 55:
+            addToDisplay("7");
+            break;
+        case 56:
+            addToDisplay("8");
+            break;
+        case 57:
+            addToDisplay("9");
+            break;
+        case 189:
+            changeSign();
+            break;
+        case 190:
+            addDot();
+            break;
+        default:
+            break;
+    }
+}
