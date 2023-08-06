@@ -24,9 +24,14 @@ function addToDisplay(number){
         secondNumber=1;
     }
     else if (firstNumber!="" && secondNumber==0){
-        display.textContent="";
-        display.textContent=number;
-        secondNumber=number;
+        if (selectedOperator==""){
+            display.textContent+=number;
+        }
+        else{
+            display.textContent="";
+            display.textContent=number;
+            secondNumber=number;
+        }
     }
     else if(displayValue.length>=9){
         return;
