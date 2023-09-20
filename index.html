@@ -15,33 +15,33 @@
         <div id="display_container">0</div>
         <div id="functions-container">
             <div class="grid">
-                <button onclick="chooseOperator('+')" class="calc-button operation" data-key="107">+</button>
-                <button onclick="chooseOperator('-')" class="calc-button operation" data-key="109">-</button>
-                <button onclick="chooseOperator('*')" class="calc-button operation" data-key="106">*</button>
-                <button onclick="chooseOperator('/')" class="calc-button operation" data-key="111">/</button>
+                <button id="plus-operator" class="calc-button operation" data-key="107">+</button>
+                <button id="minus-operator" class="calc-button operation" data-key="109">-</button>
+                <button id="multiply-operator" class="calc-button operation" data-key="106">*</button>
+                <button id="division-operator" class="calc-button operation" data-key="111">/</button>
             </div>
             <div class="grid">
-                <button onclick="addToDisplay(7)" class="calc-button numbers" data-key="55">7</button>
-                <button onclick="addToDisplay(8)" class="calc-button numbers" data-key="56">8</button>
-                <button onclick="addToDisplay(9)" class="calc-button numbers" data-key="57">9</button>
-                <button onclick="clearAll()" class="calc-button additional" data-key="8">AC</button>
+                <button id="digit-7" class="calc-button numbers" data-key="55">7</button>
+                <button id="digit-8" class="calc-button numbers" data-key="56">8</button>
+                <button id="digit-9" class="calc-button numbers" data-key="57">9</button>
+                <button id="clear-button" class="calc-button additional" data-key="8">AC</button>
             </div>
             <div class="grid">
-                <button onclick="addToDisplay(4)" class="calc-button numbers" data-key="52">4</button>
-                <button onclick="addToDisplay(5)" class="calc-button numbers" data-key="53">5</button>
-                <button onclick="addToDisplay(6)" class="calc-button numbers" data-key="54">6</button>
-                <button onclick="changeSign()" class="calc-button additional" data-key="189">+/-</button>
+                <button id="digit-4" class="calc-button numbers" data-key="52">4</button>
+                <button id="digit-5" class="calc-button numbers" data-key="53">5</button>
+                <button id="digit-6" class="calc-button numbers" data-key="54">6</button>
+                <button id="change-sign-button" class="calc-button additional" data-key="189">+/-</button>
             </div>
             <div class="grid">
-                <button onclick="addToDisplay(1)" class="calc-button numbers" data-key="49">1</button>
-                <button onclick="addToDisplay(2)" class="calc-button numbers" data-key="50">2</button>
-                <button onclick="addToDisplay(3)" class="calc-button numbers" data-key="51">3</button>
-                <button onclick="getPercentage()" class="calc-button additional">%</button>
+                <button id="digit-1" class="calc-button numbers" data-key="49">1</button>
+                <button id="digit-2" class="calc-button numbers" data-key="50">2</button>
+                <button id="digit-3" class="calc-button numbers" data-key="51">3</button>
+                <button id="percentage-button" class="calc-button additional">%</button>
             </div>
             <div class="grid">
-                <button onclick="addToDisplay(0)" class="calc-button zero" data-key="48">0</button>
-                <button onclick="addDot()" class="calc-button numbers" data-key="190">.</button>
-                <button onclick="operate()" class="calc-button additional" data-key="13">=</button>
+                <button id="digit-0" class="calc-button zero" data-key="48">0</button>
+                <button id="add-dot-button" class="calc-button numbers" data-key="190">.</button>
+                <button id="operate-button" class="calc-button additional" data-key="13">=</button>
             </div>
         </div>
     </div>

@@ -221,3 +221,45 @@ function checkKey(keyCode){
             break;
     }
 }
+
+let plusOperatorButton=document.getElementById("plus-operator");
+plusOperatorButton.addEventListener("click", ()=>{
+    chooseOperator("+");
+});
+
+let minusOperatorButton=document.getElementById("minus-operator");
+minusOperatorButton.addEventListener("click", ()=>{
+    chooseOperator("-");
+});
+
+let multiplyOperatorButton=document.getElementById("multiply-operator");
+multiplyOperatorButton.addEventListener("click", ()=>{
+    chooseOperator("*");
+});
+
+let divisionOperatorButton=document.getElementById("division-operator");
+divisionOperatorButton.addEventListener("click", ()=>{
+    chooseOperator("/");
+});
+
+for (let i=0; i<10; i++){
+    let digitButton=document.getElementById(`digit-${i}`);
+    digitButton.addEventListener("click", ()=>{
+        addToDisplay(i);
+    });
+}
+
+let clearDisplayButton=document.getElementById("clear-button");
+clearDisplayButton.addEventListener("click", clearAll);
+
+let changeSignButton=document.getElementById("change-sign-button");
+changeSignButton.addEventListener("click", changeSign);
+
+let percentageButton=document.getElementById("percentage-button");
+percentageButton.addEventListener("click", getPercentage);
+
+let addDotButton=document.getElementById("add-dot-button");
+addDotButton.addEventListener("click", addDot);
+
+let operateButton=document.getElementById("operate-button");
+operateButton.addEventListener("click", operate);
